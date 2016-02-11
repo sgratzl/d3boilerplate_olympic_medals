@@ -30,7 +30,12 @@ function update(data) {
   rects.exit().remove();
 }
 
+//var data = [3, 4, 2, 5, 7];
+//update(data);  
 
-var data = [3, 4, 2, 5, 7];
-update(data);
+//external data
+d3.csv('./data/dataset.csv', function(csv) {
+  var data = csv.map(function(d) { return d.value; });
+  update(data);  
+})
 
